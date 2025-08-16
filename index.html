@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>📝 Todo List</h1>
+
+        <form id="todo-form" autocomplete="off">
+            <input id="todo-input" type="text" placeholder="Nhập việc cần làm..." required />
+            <button type="submit" class="btn">Thêm</button>
+        </form>
+
+        <section class="filters">
+            <button data-filter="all" class="chip active">Tất cả</button>
+            <button data-filter="active" class="chip">Chưa xong</button>
+            <button data-filter="completed" class="chip">Đã xong</button>
+            <button id="clear-completed" class="chip warn">Xóa việc đã xong</button>
+        </section>
+
+        <ul id="todo-list" class="list"></ul>
+
+        <footer class="footer">
+            <span id="left-count">0</span> việc chưa xong
+        </footer>
+    </main>
+
+    <template id="item-template">
+        <li class="item">
+            <label class="checkbox">
+                <input type="checkbox" class="toggle" />
+                <span class="checkmark"></span>
+            </label>
+            <input class="title" />
+            <button class="delete" title="Xóa">×</button>
+        </li>
+    </template>
+
+    <script src="/app.js" type="module"></script>
+</body>
+
+</html>
